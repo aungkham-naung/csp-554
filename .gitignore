@@ -1,0 +1,23 @@
+venv/
+__pycache__/
+*.pyc
+.DS_Store
+
+# Local data captures (large, regenerable)
+data/*.jsonl
+data/*.parquet
+
+# Secrets / local AWS config
+.env
+*.pem
+
+# IDE
+.vscode/
+.idea/
+
+# Spark / Hadoop
+spark-warehouse/
+metastore_db/
+
+# Screenshots dropped into repo root
+Screenshot*.png

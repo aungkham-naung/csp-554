@@ -1,0 +1,55 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "S3Access",
+      "Effect": "Allow",
+      "Action": [
+        "s3:GetObject",
+        "s3:PutObject",
+        "s3:DeleteObject",
+        "s3:ListBucket"
+      ],
+      "Resource": [
+        "arn:aws:s3:::csp544-crypto-pipeline",
+        "arn:aws:s3:::csp544-crypto-pipeline/*"
+      ]
+    },
+    {
+      "Sid": "DynamoDBAccess",
+      "Effect": "Allow",
+      "Action": [
+        "dynamodb:PutItem",
+        "dynamodb:BatchWriteItem",
+        "dynamodb:GetItem",
+        "dynamodb:Query",
+        "dynamodb:Scan",
+        "dynamodb:DescribeTable"
+      ],
+      "Resource": "arn:aws:dynamodb:us-east-2:*:table/CryptoMetrics"
+    },
+    {
+      "Sid": "MSKAccess",
+      "Effect": "Allow",
+      "Action": [
+        "kafka-cluster:Connect",
+        "kafka-cluster:DescribeTopic",
+        "kafka-cluster:DescribeGroup",
+        "kafka-cluster:AlterGroup",
+        "kafka-cluster:ReadData",
+        "kafka-cluster:WriteData"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "CloudWatch",
+      "Effect": "Allow",
+      "Action": [
+        "logs:CreateLogGroup",
+        "logs:CreateLogStream",
+        "logs:PutLogEvents"
+      ],
+      "Resource": "*"
+    }
+  ]
+}
